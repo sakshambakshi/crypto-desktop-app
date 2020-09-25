@@ -1,15 +1,41 @@
 {
   "name": "crypto-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "Crypto app",
   "main": "main.js",
+  
+  "productName":"crypto-app",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron .",
+    "build-installer":"electron-builder"
   },
+
+"build": {
+  "appId": "crypto-app",
+  "win": {
+    "target": [
+      "nsis"
+    ],
+    "icon": "assets/images/icons/icon.ico"
+  },
+  "nsis": {
+    "installerIcon": "assets/images/icons/icon.ico",
+    "uninstallerIcon": "assets/images/icons/icon.ico",
+    "uninstallDisplayName": "crypto app",
+    "license": "license.txt",
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true
+  }
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "electron": "10.1.2"
+    "electron": "10.1.2",
+    "electron-builder": "^22.8.1",
+    "electron-packager": "^15.1.0"
+  },
+  "dependencies": {
+    "axios": "^0.20.0"
   }
 }
